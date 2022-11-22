@@ -57,6 +57,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Test.cs" />
+    <Compile Include="Assets\Script\BoomDel.cs" />
+    <Compile Include="Assets\25 sprite effects\Animation_seq.cs" />
     <Compile Include="Assets\Script\E_Test.cs" />
     <Compile Include="Assets\Script\Property.cs" />
     <Compile Include="Assets\Script\TestMoney.cs" />
