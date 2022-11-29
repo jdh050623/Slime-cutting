@@ -61,7 +61,9 @@
     <Compile Include="Assets\25 sprite effects\Animation_seq.cs" />
     <Compile Include="Assets\Script\E_Test.cs" />
     <Compile Include="Assets\Script\Property.cs" />
+    <Compile Include="Assets\Script\UI\Ability.cs" />
     <Compile Include="Assets\Script\TestMoney.cs" />
+    <Compile Include="Assets\Script\UI\Menu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

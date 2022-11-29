@@ -9,6 +9,7 @@ public class E_Test : MonoBehaviour
     private bool hitDelay;
     public float maxHp;
     public int dropLvEx;
+    
     [SerializeField] public static float hp;
     SpriteRenderer sr;
 
@@ -19,7 +20,7 @@ public class E_Test : MonoBehaviour
     }
     private void Update()
     {
-         Death();     
+         Death();
     }
     void OnMouseEnter()
     {
@@ -32,11 +33,25 @@ public class E_Test : MonoBehaviour
 
     private void Hit()
     {
+
+
         if(!hitDelay)
         {
             hitDelay = true;
             Property.money = Property.money + Property.moneyUp;
-            hp = hp - Property.attackPower;
+            bool crit = Property.CriChance(Ability.critRate); // 农府萍拿 犬伏
+            if (crit)
+            {
+                hp = hp - Property.criDmg;
+                Debug.Log("农府 朵" + Property.criDmg);
+
+            }
+            else
+            {
+                hp = hp - Property.attackPower;
+                Debug.Log("农府 救朵");
+            }
+
             transform.localScale = new Vector3(0.35f, 0.35f, 0.35f);
             sr.material.color = new Color(1, 0.5f, 0.5f);
             HitEffect.SetActive(true);
@@ -65,6 +80,8 @@ public class E_Test : MonoBehaviour
         HitEffect.SetActive(false);
         hitDelay = false;
     }
+
+
 }
 
 
