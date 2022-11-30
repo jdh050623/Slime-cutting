@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class Ability : MonoBehaviour
+public class Ability : BtSound
 {
     public static float abilityLv; //남은 능력치
     public static float critRate; // 치명타 확률 스탯
     public static float critDmg; // 치명타 데미지 스탯
     public static float atk; // 공격력 스탯
+    public AudioSource s_powerUp;
+    public AudioSource s_powerAllUp;
 
     [Header("테스트 용")]
     public float criDmg; 
@@ -37,6 +39,7 @@ public class Ability : MonoBehaviour
     {
         if(abilityLv >= 1)
         {
+            s_powerUp.Play();
             abilityLv--;
             atk++;
         }   
@@ -44,14 +47,16 @@ public class Ability : MonoBehaviour
 
     public void AllAtkUp()
     {
+        if (abilityLv >= 1) s_powerAllUp.Play();
         atk = atk + abilityLv;
-        abilityLv = 0;
+        abilityLv = 0;    
     }
 
     public void CritRateUp() //치확
     {
         if (abilityLv >= 1)
         {
+            s_powerUp.Play();
             abilityLv--;
             critRate++;
         }
@@ -59,14 +64,16 @@ public class Ability : MonoBehaviour
 
     public void AllCritRateUp()
     {
+        if (abilityLv >= 1) s_powerAllUp.Play();
         critRate = critRate + abilityLv;
-        abilityLv = 0;
+        abilityLv = 0;   
     }
 
     public void CritDmgUp() //치뎀
     {
         if (abilityLv >= 1)
         {
+            s_powerUp.Play();
             abilityLv--;
             critDmg++;
         }
@@ -74,6 +81,7 @@ public class Ability : MonoBehaviour
 
     public void AllCritDmgUp()
     {
+        if (abilityLv >= 1) s_powerAllUp.Play();
         critDmg = critDmg + abilityLv;
         abilityLv = 0;
     }

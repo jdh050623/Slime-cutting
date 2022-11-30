@@ -7,20 +7,29 @@ public class E_Test : MonoBehaviour
     public GameObject HitEffect;
     public GameObject BOOM;
     private bool hitDelay;
-    public float maxHp;
+    public static float maxHp;
+    public float maxHp1;
     public int dropLvEx;
+    public int myNum;
     
-    [SerializeField] public static float hp;
+    [SerializeField] public static float hp; //실제 몬스터 hp
     SpriteRenderer sr;
 
     private void Start()
     {
-        hp = maxHp;
+        hp = maxHp1;
         sr = GetComponent<SpriteRenderer>();
     }
     private void Update()
     {
-         Death();
+        maxHp = maxHp1;
+        if (SelectStage.Sel == true)
+        {
+            hp = maxHp1;
+            SelectStage.Sel = false;
+        }
+        
+        Death();
     }
     void OnMouseEnter()
     {
@@ -28,13 +37,10 @@ public class E_Test : MonoBehaviour
         {
             Hit();
         }
-        
     }
 
     private void Hit()
     {
-
-
         if(!hitDelay)
         {
             hitDelay = true;

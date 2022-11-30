@@ -27,7 +27,7 @@ public class TestMoney : MonoBehaviour
         t_enemyHp.text = "슬라임 체력 : " + E_Test.hp.ToString();
         /*t_lv.text = "공 : " + Property.attackPower.ToString();*/
         t_lv.text = "LV : " + Property.lv.ToString();
-        t_lvex.text = "EX  : " + Property.necessityLvEx.ToString() + "/" + Property.lvEx.ToString();
+        t_lvex.text = "EX  : " +Property.lvEx.ToString() + "/" + Property.necessityLvEx.ToString();
         t_abilityPoint.text = "남은 능력치 : " + Ability.abilityLv.ToString();
         t_atk.text = "+" + Ability.atk.ToString();
         t_critDmg.text = "+" + Ability.critDmg.ToString();

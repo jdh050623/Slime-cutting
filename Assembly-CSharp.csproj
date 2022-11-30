@@ -64,6 +64,8 @@
     <Compile Include="Assets\Script\UI\Ability.cs" />
     <Compile Include="Assets\Script\TestMoney.cs" />
     <Compile Include="Assets\Script\UI\Menu.cs" />
+    <Compile Include="Assets\Script\UI\BtSound.cs" />
+    <Compile Include="Assets\Script\UI\SelectStage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
