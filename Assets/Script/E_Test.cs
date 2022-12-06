@@ -6,12 +6,15 @@ public class E_Test : MonoBehaviour
 {
     public GameObject HitEffect;
     public GameObject BOOM;
+    public GameObject DmgText; // 때렸을때 나오는 데미지
+    public GameObject CriDmgText;//때렸을때 나오는 크리데미지
+    //public Transform TextSpon; // 때렸을때 나오는 텍스트의 위치
     private bool hitDelay;
     public static float maxHp;
     public float maxHp1;
     public int dropLvEx;
     public int myNum;
-    
+
     [SerializeField] public static float hp; //실제 몬스터 hp
     SpriteRenderer sr;
 
@@ -49,12 +52,14 @@ public class E_Test : MonoBehaviour
             if (crit)
             {
                 hp = hp - Property.criDmg;
+                Instantiate(CriDmgText, /*TextSpon*/transform.position, Quaternion.Euler(0, 0, 0));
                 Debug.Log("크리 뜸" + Property.criDmg);
 
             }
             else
             {
                 hp = hp - Property.attackPower;
+                Instantiate(DmgText, /*TextSpon*/transform.position, Quaternion.Euler(0, 0, 0));
                 Debug.Log("크리 안뜸");
             }
 
