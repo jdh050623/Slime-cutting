@@ -22,13 +22,12 @@ public class Property : MonoBehaviour
 
     private void Update()
     {
-        criDmg = attackPower + (attackPower * (0.08f * Ability.critDmg));
+        criDmg = 1.5f*(attackPower + (attackPower * 2f * (0.08f * Ability.critDmg)));
         criDmg = Mathf.Round(criDmg);
 
         if (Input.GetKeyDown(KeyCode.A))
         {
             lvEx = lvEx+50;
-            Debug.Log(moneyUp);
         }
 
         /*if (Input.GetKeyDown(KeyCode.D))

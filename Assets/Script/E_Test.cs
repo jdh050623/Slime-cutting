@@ -13,7 +13,10 @@ public class E_Test : MonoBehaviour
     public static float maxHp;
     public float maxHp1;
     public int dropLvEx;
+    public int dropMoney;
     public int myNum;
+    public float maxSize;
+    public float minSize;
 
     [SerializeField] public static float hp; //½ÇÁ¦ ¸ó½ºÅÍ hp
     SpriteRenderer sr;
@@ -47,11 +50,11 @@ public class E_Test : MonoBehaviour
         if(!hitDelay)
         {
             hitDelay = true;
-            Property.money = Property.money + Property.moneyUp;
+            Property.money = dropMoney + Property.money + Property.moneyUp;
             bool crit = Property.CriChance(Ability.critRate); // Å©¸®Æ¼ÄÃ È®·ü
             if (crit)
             {
-                hp = hp - Property.criDmg;
+                hp = hp - (Property.criDmg);
                 Instantiate(CriDmgText, /*TextSpon*/transform.position, Quaternion.Euler(0, 0, 0));
                 Debug.Log("Å©¸® ¶ä" + Property.criDmg);
 
@@ -63,7 +66,7 @@ public class E_Test : MonoBehaviour
                 Debug.Log("Å©¸® ¾È¶ä");
             }
 
-            transform.localScale = new Vector3(0.35f, 0.35f, 0.35f);
+            transform.localScale = new Vector3(minSize, minSize, minSize);
             sr.material.color = new Color(1, 0.5f, 0.5f);
             HitEffect.SetActive(true);
             StartCoroutine(SizeColl());
@@ -86,7 +89,7 @@ public class E_Test : MonoBehaviour
     IEnumerator SizeColl()
     {
         yield return new WaitForSeconds(0.2f);
-        transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+        transform.localScale = new Vector3(maxSize, maxSize, maxSize);
         sr.material.color = new Color(1, 1, 1);
         HitEffect.SetActive(false);
         hitDelay = false;
