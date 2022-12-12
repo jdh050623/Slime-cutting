@@ -34,4 +34,16 @@ public class SelectStage : MonoBehaviour
         Enemy[1].SetActive(true);
     }
 
+    public void Stage1_3()
+    {
+        AllFalse();
+        Enemy[2].SetActive(true);
+    }
+
+    public void Stage1_4()
+    {
+        AllFalse();
+        Enemy[3].SetActive(true);
+    }
+
 }
