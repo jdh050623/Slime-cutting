@@ -66,7 +66,7 @@ public class E_Test : MonoBehaviour
                 Debug.Log("Å©¸® ¾È¶ä");
             }
 
-            transform.localScale = new Vector3(minSize, minSize, minSize);
+            transform.localScale = new Vector3(maxSize, maxSize, maxSize);
             sr.material.color = new Color(1, 0.5f, 0.5f);
             HitEffect.SetActive(true);
             StartCoroutine(SizeColl());
@@ -89,7 +89,7 @@ public class E_Test : MonoBehaviour
     IEnumerator SizeColl()
     {
         yield return new WaitForSeconds(0.2f);
-        transform.localScale = new Vector3(maxSize, maxSize, maxSize);
+        transform.localScale = new Vector3(minSize, minSize, minSize);
         sr.material.color = new Color(1, 1, 1);
         HitEffect.SetActive(false);
         hitDelay = false;
