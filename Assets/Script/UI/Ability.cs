@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Ability : BtSound
 {
-    public static float abilityLv; //남은 능력치
+    public static float abilityLv; //찍을 수 있는 능력치 수
     public static float critRate; // 치명타 확률 스탯
     public static float critDmg; // 치명타 데미지 스탯
     public static float atk; // 공격력 스탯

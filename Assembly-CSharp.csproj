@@ -69,6 +69,7 @@
     <Compile Include="Assets\Script\UI\Ability.cs" />
     <Compile Include="Assets\Script\UI\UI_Text.cs" />
     <Compile Include="Assets\Script\UI\Menu.cs" />
+    <Compile Include="Assets\Script\NotUsed.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

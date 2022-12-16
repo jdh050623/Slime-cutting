@@ -10,10 +10,14 @@ public class Property : MonoBehaviour
     public static float attackPower = 1;
     public static float criDmg;//실제 크리 데미지
 
+    public GameObject t_LvUp;
+
     public static float lv = 1;
     public static float lvEx;
     [SerializeField] private float necessityLvEx1;
     public static float necessityLvEx;
+
+    public AudioSource lvUp;
 
     private void Start()
     {
@@ -44,13 +48,17 @@ public class Property : MonoBehaviour
             }
         }*/
 
-        if (lvEx >= necessityLvEx)
+        if (lvEx >= necessityLvEx) //레벨업 시스템
         {
             Ability.abilityLv++;
             lvEx = lvEx - necessityLvEx;
             lv++;
+            t_LvUp.SetActive(true);
+            lvUp.Play();
+            StartCoroutine(T_LvDel());
             necessityLvEx = necessityLvEx * 1.5f;
-            Mathf.Ceil(necessityLvEx);  //Truncate(necessityLvEx * 10)/10;
+            Mathf.Ceil(necessityLvEx);
+            
         }
         necessityLvEx = Mathf.Round(necessityLvEx);
     }
@@ -93,6 +101,10 @@ public class Property : MonoBehaviour
         return Success;
     }
 
+    IEnumerator T_LvDel()
+    {
+        yield return new WaitForSeconds(0.9f);
+        t_LvUp.SetActive(false);
+    }
 
-    
 }
